@@ -225,8 +225,16 @@ header p {
 
 .vse {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 1000px;
     grid-gap: 50px;
     padding-bottom: 50px;
+}
+@media (min-width: 1000px) {
+    .vse {
+        width: 1800px;
+    }
 }
 
 /*blok-4*/
@@ -600,7 +608,7 @@ footer {
     color: black;
     font-size: 64px;
     border-radius: 35px;
-    width: 1800px;
+    width: 2000px;
     height: 180px;
 }
 
@@ -610,7 +618,7 @@ footer {
 
 .otstup-1 {
     margin-top: 40px;
-    margin-left: 80px;
+    margin-left: 70px;
     grid-gap: 60px;
     display: flex;
 }

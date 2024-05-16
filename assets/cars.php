@@ -12,27 +12,39 @@
 
     <script defer src="../assets/main.js"></script>
 
-    <title>BMW 750i VII (G70)</title>
+    <title>Быдло?</title>
 </head>
 <body>
     <?php include('../assets/php/hed.php'); ?>
     <main class="main-3">
         <div class="collums">
+        <?php 
+            require_once ('../assets/bd/bd.php');
+            
+            $game_id = $_GET['id'];
+
+            $sql = "SELECT * FROM Katalog WHERE id = $game_id";
+            $res = mysqli_query($conn,$sql);
+
+            if($res && mysqli_num_rows($res) > 0) {
+
+                while($row = mysqli_fetch_assoc($res)) {
+        ?>
             <div>
-                <img src="photo/G70/Rectangle 55.png" width="740px" alt="">
-                <img src="photo/G70/Rectangle 56.png" alt="">
-                <img src="photo/G70/Rectangle 57.png" alt="">
-                <img src="photo/G70/Rectangle 58.png" alt="">
-                <img src="photo/G70/Rectangle 60.png" alt="">
-                <img src="photo/G70/Rectangle 59.png" alt="">
-                <img src="photo/G70/Rectangle 61.png" alt="">
+                <img class="catinkiCars" src="photo/x6/Rectangle 71.png" width="740px" alt="">
+                <img src="<?= $row["img2"]?>" alt="">
+                <img src="photo/x6/Rectangle 63.png" alt="">
+                <img src="photo/x6/Rectangle 65.png" alt="">
+                <img src="photo/x6/Rectangle 62.png" alt="">
+                <img src="photo/x6/Rectangle 82.png" alt="">
+                <img src="photo/x6/Rectangle 81.png" alt="">
             </div>
             <div>
-                <h1 class="bol-text">BMW 750i VII (G70)</h1>
-                <h1 class="ot">ОТ 13 446 457₽</h1>
+                <h1 class="bol-text"><?= $row['name'] ?> , <?= $row['Year'] ?></h1>
+                <h1 class="ot">ОТ 7 232 990₽</h1>
                 <div class="div">
                     <p>Пробег</p>
-                    <p class="smest">38 км</p>
+                    <p class="smest">20 922 км</p>
                 </div>
                 <hr>
                 <div class="div">
@@ -47,7 +59,7 @@
                 <hr>
                 <div class="div">
                     <p>Мощность</p>
-                    <p class="smest">299 л.с</p>
+                    <p class="smest">340 л.с</p>
                 </div>
                 <hr>
                 <div class="div">
@@ -55,7 +67,7 @@
                     <p class="smest">АТ</p>
                 </div>
                 <hr>
-                <p>Музыкальная система Bowers & Wilkins, контурная подсветка салона автомобиля, дисплейное управление для задних пассажиров, панорамная крыша, Панорамная Крыша, Sky Lounge.</p>
+                <p>Панорама, камера 360°, проекция на лобовое стекло, аудиосистема HI-FI,Пневмоподвеска,Пакетом, Professional, Интерфейс беспроводной зарядки,потолок Anthracite,Спортивный пакет М</p>
                 <div class="border-cars">
                     <li>Под заказ</li>
                     <div class="cent">
@@ -65,6 +77,10 @@
                 </div>
             </div>
         </div>
+        <?php
+            }
+        }
+        ?>
     </main>
     <footer>
         <h2>+7 993 603-32-99</h2>

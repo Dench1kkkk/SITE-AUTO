@@ -34,6 +34,8 @@
             <div><h2>ДОВОЛЬНЫХ КЛИЕНТОВ</h2><h1 class="d13">> 1359</h1></div>
             <div><h2>СТОИМОСТЬ АВТО ПОД КЛЮЧ</h2><h1>от 5 000 000 ₽</h1></div>
         </section>
+        <section class="blok-3">
+            <h1  class="istoriya">История продаж</h1>
             <section class="blok-3">
             <div class="vse">
                 <h1  class="istoriya">История продаж</h1>

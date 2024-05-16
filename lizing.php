@@ -12,7 +12,7 @@
 
     <script defer src="assets/main.js"></script>
 
-    <title>Покупка в лизинг, кредит</title>
+    <title>lizing</title>
 </head>
 <body>
     <?php include('assets/php/heder.php'); ?>

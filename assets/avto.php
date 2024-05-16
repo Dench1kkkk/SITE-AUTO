@@ -29,7 +29,7 @@
                     if(mysqli_num_rows($res) > 0) {
                         // Цикл по результатам запроса
                         while($row = mysqli_fetch_assoc($res)) {
-                            $catalog_id = $row['id']
+                            $game_id = $row['id']
             ?>
                 <div class="border-2">
                     <div>
@@ -42,7 +42,7 @@
                         </div>
                         <div class="centrovka-2">
                             <h2 class="qwer">Цена от <?= $row['cena'] ?></h2>
-                            <input type="button" class="zakaz" onclick="location.href='Cars/cars.php?id=<?= $catalog_id ?>';" value="Заказать автомобиль" />
+                            <input type="button" class="zakaz" onclick="location.href='Cars/cars.php?id=<?= $game_id ?>';" value="Заказать автомобиль" />
                         </div>
                     </div>
                 </div>

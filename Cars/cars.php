@@ -12,66 +12,82 @@
 
     <script defer src="../assets/main.js"></script>
 
-    <title>Toyota LC(300), 2023</title>
+    <title>Быдло?</title>
 </head>
 <body>
     <?php include('../assets/php/hed.php'); ?>
     <main class="main-3">
         <div class="collums">
+        <?php 
+            require_once ('../assets/bd/bd.php');
+            
+            $catalog_id = $_GET['id'];
+
+            $sql = "SELECT * FROM catalog WHERE id = $catalog_id";
+            $res = mysqli_query($conn,$sql);
+
+            if($res && mysqli_num_rows($res) > 0) {
+
+                while($row = mysqli_fetch_assoc($res)) {
+        ?>
             <div>
-                <img src="photo/LC/Rectangle 17.png" width="740px" alt="">
-                <img src="photo/LC/Rectangle 83.png" alt="">
-                <img src="photo/LC/Rectangle 79.png" alt="">
-                <img src="photo/LC/Rectangle 91.png" alt="">
-                <img src="photo/LC/Rectangle 84.png" alt="">
-                <img src="photo/LC/Rectangle 86.png" alt="">
-                <img src="photo/LC/Rectangle 92.png" alt="">
+                <img class="catinkiCars" src="<?= $row["img8"]?>" width="750px" height="560px" alt="">
+                <img src="<?= $row["img2"]?>" alt="">
+                <img src="<?= $row["img3"]?>" alt="">
+                <img src="<?= $row["img4"]?>" alt="">
+                <img src="<?= $row["img5"]?>" alt="">
+                <img src="<?= $row["img6"]?>" alt="">
+                <img src="<?= $row["img7"]?>" alt="">
             </div>
             <div>
-                <h1 class="bol-text">Toyota LC(300), 2023</h1>
-                <h1 class="ot">ОТ 12 750 473₽</h1>
+                <h1 class="bol-text"><?= $row['name'] ?> , <?= $row['Year'] ?></h1>
+                <h1 class="ot">ОТ <?= $row["cena"]?></h1>
                 <div class="div">
                     <p>Пробег</p>
-                    <p class="smest">13 933 км</p>
+                    <p class="smest"><?= $row["Mileage"]?></p>
                 </div>
                 <hr>
                 <div class="div">
                     <p>Год выпуска</p>
-                    <p class="smest">2023</p>
+                    <p class="smest"><?= $row["Year"]?></p>
                 </div>
                 <hr>
                 <div class="div">
                     <p>Двигатель</p>
-                    <p class="smest">Бензин</p>
+                    <p class="smest"><?= $row["Fuel type"]?></p>
                 </div>
                 <hr>
                 <div class="div">
                     <p>Мощность</p>
-                    <p class="smest">415 л.с</p>
+                    <p class="smest"><?= $row["Power"]?></p>
                 </div>
                 <hr>
                 <div class="div">
                     <p>Трансмиссия</p>
-                    <p class="smest">АТ</p>
+                    <p class="smest"><?= $row["Transmission"]?></p>
                 </div>
                 <hr>
-                <p>Цвет-черный металлик,Японская сборка, Салон-черная кожа с перфорацией, Подогрев и вентиляция передних сиденийТретий ряд сидений, Электрорегулировка передних сидений</p>
+                <p><?= $row["description"]?></p>
                 <div class="border-cars">
                     <li>Под заказ</li>
                     <div class="cent">
                         <input type="button" class="but-casr1" id="zakaz" value="Заказать"/>
-                        <input type="buttom" class="but-casr2" id="FAQ" value="Задать вопрос"/>
+                        <input type="buttom" class="but-casr2" id="FAQ" value="Задать вопрос" />
                     </div>
                 </div>
             </div>
         </div>
+        <?php
+            }
+        }
+        ?>
     </main>
     <footer>
         <h2>+7 993 603-32-99</h2>
         <h2>г. Москва, Белокаменное шоссе, д. 20 офис 213</h2>
         <h2>Пн-пт 9.00-18.00, Сб 9.00 - 14.00, Вс выходной</h2>
     </footer>
-    <?php include('../assets/bd/Vopros.php'); ?>
-    <?php include('../assets/bd/Zakazat.php'); ?>
 </body>
+<?php include('../assets/bd/Vopros.php'); ?>
+    <?php include('../assets/bd/Zakazat.php'); ?>
 </html>
